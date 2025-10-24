@@ -1,16 +1,18 @@
 using Library.Items;
-
 namespace Library.Characters;
 
-public class Mago : IPersonajeMagico
+public abstract class PersonajeMagicoVillano: IPersonaje
 {
     public string Nombre {get; set;}
     public double Vida { get; set; } = 100;
     private List<IItemNoMag> _listaitems = new List<IItemNoMag>();
     private List<IItemMag> _listaitemsmag = new List<IItemMag>();
-    public Mago(string name)
+    public int VP { get; set; }
+
+    public PersonajeMagicoVillano(string name, int vp)
     {
         this.Nombre = name;
+        VP = vp;
     }
     
     public double AtaqueTotal
