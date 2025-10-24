@@ -113,5 +113,6 @@ public abstract class PersonajeMagicoHeroe
     {
         _listaitemsmag.Remove(item);
     }
+
     
 }

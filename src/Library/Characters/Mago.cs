@@ -12,9 +12,7 @@ public class Mago : IPersonajeMagico
     {
         this.Nombre = name;
     }
-
-    private Libro _libro;
-
+    
     public double AtaqueTotal
     {
         get
@@ -113,14 +111,5 @@ public class Mago : IPersonajeMagico
     {
         _listaitemsmag.Remove(item);
     }
-    
-    public void AgregarLibro(Libro libro)
-    {
-        _libro = libro;
-    }
-    
-    public void QuitarLibro(Libro libro)
-    {
-        _libro = null;
-    }
+   
 }
