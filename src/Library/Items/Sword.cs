@@ -1,12 +1,13 @@
-namespace Ucu.Poo.RoleplayGame;
+namespace Library.Items;
 
-public class Sword: IAttackItem
+public class Sword : IIAtaqueNoMag
 {
-    public int AttackValue
+    public string Nombre { get; set; }
+    public double ValorAtaque { get; set;  }
+
+    public Sword (string nombre, double ataque)
     {
-        get
-        {
-            return 20;
-        }
+        Nombre = nombre;
+        ValorAtaque = ataque;
     }
 }

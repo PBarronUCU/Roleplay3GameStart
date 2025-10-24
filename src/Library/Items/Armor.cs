@@ -1,12 +1,13 @@
-namespace Ucu.Poo.RoleplayGame;
+namespace Library.Items;
 
-public class Armor: IDefenseItem
+public class rmor : IIDefensaNoMag
 {
-    public int DefenseValue
+    public string Nombre { get; set; }
+    public double ValorDefensa { get; set;  }
+
+    public Armor(string nombre, double defensa)
     {
-        get
-        {
-            return 25;
-        }
+        Nombre = nombre;
+        ValorDefensa = defensa;
     }
 }
