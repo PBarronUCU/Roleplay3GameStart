@@ -88,5 +88,14 @@ namespace Library.Characters
         {
             _listaitems.Remove(item);
         }
+
+        public void AddXp(int vp)
+        {
+            Xp += vp;
+            if (vp >= 5)
+            {
+                Curar(this);
+            }
+        }
     }
 }
