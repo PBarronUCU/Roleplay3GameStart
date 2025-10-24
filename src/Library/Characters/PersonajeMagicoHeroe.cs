@@ -8,9 +8,11 @@ public abstract class PersonajeMagicoHeroe
     public double Vida { get; set; } = 100;
     private List<IItemNoMag> _listaitems = new List<IItemNoMag>();
     private List<IItemMag> _listaitemsmag = new List<IItemMag>();
+    public int Xp { get; set; }
     public PersonajeMagicoHeroe(string name)
     {
         this.Nombre = name;
+        Xp = 0;
     }
 
     public double AtaqueTotal
