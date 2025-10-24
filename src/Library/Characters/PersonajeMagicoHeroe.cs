@@ -114,5 +114,12 @@ public abstract class PersonajeMagicoHeroe : IPersonajeMagico
         _listaitemsmag.Remove(item);
     }
 
-    
+    public void AddXp(int vp)
+    {
+        Xp += vp;
+        if (vp >= 5)
+        {
+            Curar(this);
+        }
+    }
 }
