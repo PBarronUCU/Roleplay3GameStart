@@ -12,7 +12,6 @@ namespace Library.Characters
         // Methods
         void AgregarItemMag(IItemMag item);
         void QuitarItemMag(IItemMag item);
-        void AgregarLibro(Libro libro);
-        void QuitarLibro(Libro libro);
+       
     }
 }

@@ -2,7 +2,7 @@ using Library.Items;
 
 namespace Library.Characters;
 
-public abstract class PersonajeMagicoHeroe
+public abstract class PersonajeMagicoHeroe : IPersonajeMagico
 {
      public string Nombre {get; set;}
     public double Vida { get; set; } = 100;
