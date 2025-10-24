@@ -76,7 +76,7 @@ public class Enano : IPersonaje //Se indica que la clase Enano implementa la int
         _listaitems.Add(item); //Se agrega un item a la lista de items que tiene.
     }
     
-    public void Quitar_Item(IItemNoMag item)
+    public void QuitarItem(IItemNoMag item)
     {
         _listaitems.Remove(item); //Se quita un item a la lista de items que tiene.
     }

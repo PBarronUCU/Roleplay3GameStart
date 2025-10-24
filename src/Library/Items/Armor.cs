@@ -1,6 +1,6 @@
 namespace Library.Items;
 
-public class rmor : IIDefensaNoMag
+public class Armor : IIDefensaNoMag
 {
     public string Nombre { get; set; }
     public double ValorDefensa { get; set;  }
