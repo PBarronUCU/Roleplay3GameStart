@@ -22,18 +22,18 @@ public class Mago : IPersonajeMagico
             double resultado = 0;
             foreach (var item in _listaitems)
             {
-                if (item is IIAtaqueNoMag)
+                if (item is IIAtaqueNoMag ataque)
                 {   
                     
-                    resultado += item.ValorAtaque;
+                    resultado += ataque.ValorAtaque;
                 }
             }
 
             foreach (var itemMagico in _listaitemsmag)
             {
-                if (itemMagico is IIAtaqueMag)
+                if (itemMagico is IIAtaqueMag ataqueMag)
                 {
-                    resultado += itemMagico.ValorAtaque;
+                    resultado += ataqueMag.ValorAtaque;
                 }
             }
             
@@ -48,17 +48,17 @@ public class Mago : IPersonajeMagico
             double resultado = 0;
             foreach (var item in _listaitems)
             {
-                if (item is IIDefensaNoMag)
+                if (item is IIDefensaNoMag defensa)
                 {
-                    resultado += item.ValorDefensa;
+                    resultado += defensa.ValorDefensa;
                 }
             }
 
             foreach (var itemMagico in _listaitemsmag)
             {
-                if (itemMagico is IIDefensaMag)
+                if (itemMagico is IIDefensaMag  defensaMag)
                 {
-                    resultado += itemMagico.ValorDefensa;
+                    resultado += defensaMag.ValorDefensa;
                 }
             }
             

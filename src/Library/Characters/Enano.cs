@@ -20,9 +20,9 @@ public class Enano : IPersonaje //Se indica que la clase Enano implementa la int
                 double resultado = 0; //Inicialmente el resultado es 0.
                 foreach (var item in _listaitems)
                 {
-                    if (item is IIAtaqueNoMag) //Para cada item que tiene en la lista...
+                    if (item is IIAtaqueNoMag ataque) //Para cada item que tiene en la lista...
                     {
-                        resultado += item.ValorAtaque; //... le suma su valor al resultado.
+                        resultado += ataque.ValorAtaque; //... le suma su valor al resultado.
                     }
                 }
                 
@@ -37,9 +37,9 @@ public class Enano : IPersonaje //Se indica que la clase Enano implementa la int
             double resultado = 0; //Inicialmente el resultado es 0.
             foreach (var item in _listaitems)
             { 
-                if (item is IIDefensaNoMag) //Para cada item que tiene en la lista...
+                if (item is IIDefensaNoMag defensa) //Para cada item que tiene en la lista...
                 { 
-                    resultado += item.ValorDefensa; //... le suma su valor al resultado.
+                    resultado += defensa.ValorDefensa; //... le suma su valor al resultado.
                 }
             }
             return resultado; //Retorna el valor final que tenga en resultado.
