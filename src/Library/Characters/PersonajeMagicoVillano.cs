@@ -1,9 +1,9 @@
 using Library.Items;
 namespace Library.Characters;
 
-public abstract class PersonajeMagicoVillano: IPersonajeMagico
+public abstract class PersonajeMagicoVillano : IPersonajeMagico
 {
-    public string Nombre {get; set;}
+    public string Nombre { get; set; }
     public double Vida { get; set; } = 100;
     private List<IItemNoMag> _listaitems = new List<IItemNoMag>();
     private List<IItemMag> _listaitemsmag = new List<IItemMag>();
@@ -14,7 +14,7 @@ public abstract class PersonajeMagicoVillano: IPersonajeMagico
         this.Nombre = name;
         VP = vp;
     }
-    
+
     public double AtaqueTotal
     {
         get
@@ -23,8 +23,8 @@ public abstract class PersonajeMagicoVillano: IPersonajeMagico
             foreach (var item in _listaitems)
             {
                 if (item is IIAtaqueNoMag ataque)
-                {   
-                    
+                {
+
                     resultado += ataque.ValorAtaque;
                 }
             }
@@ -36,7 +36,7 @@ public abstract class PersonajeMagicoVillano: IPersonajeMagico
                     resultado += ataqueMag.ValorAtaque;
                 }
             }
-            
+
             return resultado;
         }
     }
@@ -56,12 +56,12 @@ public abstract class PersonajeMagicoVillano: IPersonajeMagico
 
             foreach (var itemMagico in _listaitemsmag)
             {
-                if (itemMagico is IIDefensaMag  defensaMag)
+                if (itemMagico is IIDefensaMag defensaMag)
                 {
                     resultado += defensaMag.ValorDefensa;
                 }
             }
-            
+
             return resultado;
         }
     }
@@ -77,8 +77,9 @@ public abstract class PersonajeMagicoVillano: IPersonajeMagico
         }
         else
         {
-            danio_resultante = danio - defensa; 
+            danio_resultante = danio - defensa;
         }
+
         if (danio_resultante >= personaje.Vida)
         {
             personaje.Vida = 0;
@@ -103,15 +104,15 @@ public abstract class PersonajeMagicoVillano: IPersonajeMagico
     {
         _listaitems.Remove(item);
     }
-    
+
     public void AgregarItemMag(IItemMag item)
     {
         _listaitemsmag.Add(item);
     }
-    
+
     public void QuitarItemMag(IItemMag item)
     {
         _listaitemsmag.Remove(item);
+
     }
-   
 }
