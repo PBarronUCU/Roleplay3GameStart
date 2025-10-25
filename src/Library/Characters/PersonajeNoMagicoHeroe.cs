@@ -48,30 +48,25 @@ namespace Library.Characters
             }
         }
 
-        public void Atacar(IPersonaje personaje)
+        public void Atacar(IPersonaje enemigo)
         {
             double danio = this.AtaqueTotal;
-            double defensa = personaje.DefensaTotal;
-            double danio_resultante = 0;
+            double defensa = enemigo.DefensaTotal;
+            double danio_resultante = Math.Max(0, danio - defensa);
 
-            if (defensa > danio)
-            {
-                danio_resultante = 0;
-            }
-            else
-            {
-                danio_resultante = danio - defensa;
-            }
+            enemigo.Vida = Math.Max(0, enemigo.Vida - danio_resultante);
 
-            if (danio_resultante >= personaje.Vida)
+            // 🩸 Si el enemigo muere...
+            if (enemigo.Vida <= 0)
             {
-                personaje.Vida = 0;
-            }
-            else
-            {
-                personaje.Vida -= danio_resultante;
+                // Gana 5 puntos de experiencia
+                this.Xp += 5;
+
+                // 💚 Se cura completamente
+                this.Vida = 100;
             }
         }
+
 
         public void Curar(IPersonaje personaje)
         {

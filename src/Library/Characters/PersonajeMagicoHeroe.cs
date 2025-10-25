@@ -66,26 +66,18 @@ public abstract class PersonajeMagicoHeroe : IPersonajeMagico
         }
     }
 
-    public void Atacar(IPersonaje personaje)
+    public void Atacar(IPersonaje enemigo)
     {
         double danio = this.AtaqueTotal;
-        double defensa = personaje.DefensaTotal;
-        double danio_resultante = 0;
-        if (defensa > danio)
+        double defensa = enemigo.DefensaTotal;
+        double danio_resultante = Math.Max(0, danio - defensa);
+
+        enemigo.Vida = Math.Max(0, enemigo.Vida - danio_resultante);
+
+        if (enemigo.Vida <= 0)
         {
-            danio_resultante = 0;
-        }
-        else
-        {
-            danio_resultante = danio - defensa; 
-        }
-        if (danio_resultante >= personaje.Vida)
-        {
-            personaje.Vida = 0;
-        }
-        else
-        {
-            personaje.Vida -= danio_resultante;
+            this.Xp += 5;
+            this.Vida = 100;
         }
     }
 
